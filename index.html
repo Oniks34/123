@@ -4,6 +4,11 @@
 	<link rel="stylesheet" href="css/style.css">
 <body>
 <main>
+	<section id="banner">
+		<header class="header" id="header">
+			<div><b>Build your own personal computer</b></div>
+		</header>
+	</section>
 	<section id="selectComp">
 		<table>
 			<tr>
@@ -48,6 +53,13 @@
 					</select>
 				</td>
 			</tr>
+			<tr>
+				<td>SSD</td>
+				<td>
+					<select name="ssd" id="ssd" onchange="SelectedItemValue('ssd')">
+					</select>
+				</td>
+			</tr>
 		</table>
 	</section>
 	<section id="sumcompline"></section>
@@ -58,6 +70,7 @@
 		<tr id="summaryRAM"></tr>
 		<tr id="summaryPOWER"></tr>
 		<tr id="summaryBOX"></tr>
+		<tr id="summarySSD"></tr>
 	</table>
 	<section id="suma"></section>
 	<div id="summaryMainboard"></div>

@@ -87,18 +87,41 @@ const power = [
 			name: "be quiet! Straight Power 11 750W",
 			price: 578,
 			img:"BE_QUIET_STRAIGHT_POWER_11_09.jpg",
+			typ:"ATX"
 	},
 	{
 			id:2,
 			name: "Corsair RM750x 750W",
 			price: 619,
 			img:"zasilacz-corsair-rm750x.jpg",
+			typ:"ATX"
 	},
 	{
 			id:3,
 			name: "Corsair RM1000i 1000W Gold Series",
 			price: 900,
 			img:"morele-neeeeet.jpg",
+			typ:"ATX"
+	},
+]
+const ssd = [
+	{
+		id:1,
+		name: "SSD Western Digital Blue 500 GB 2.5 SATA III",
+		price: 279,
+		img:"ssd1.jpg",
+	},
+	{
+		id:2,
+		name: "SSD Samsung 870 QVO 8 TB 2.5 SATA III",
+		price: 3699,
+		img:"ssd2.jpg",
+	},
+	{
+		id:3,
+		name: "Dysk SSD Samsung 860 EVO 1 TB 2.5'' SATA III",
+		price: 619,
+		img:"ssd3.jpg",
 	},
 ]
 const box = [
@@ -149,6 +172,10 @@ var cart = [
 		name: 'obudowa',
 		price:0
 	},
+	{
+		name: 'ssd',
+		price:0
+	},
 ]
 
 function addOpt(elem, optValue, textOpt){
@@ -167,38 +194,43 @@ function SelectedItemValue(SelectId){
 	const summaryMB = document.getElementById("summaryMB");
 	const summaryGFX = document.getElementById("summaryGFX");
 	if (SelectId == "cpu"){
-		summaryCPU.innerHTML = "<td><img src='img/"+cpu[strAtt-1].img+"'></td><td>"+cpu[strAtt-1].name+"</td><td><b>cena: "+cpu[strAtt-1].price+" PLN</b></td>";
+		summaryCPU.innerHTML = "<td><img src='img/"+cpu[strAtt-1].img+"'></td><td>"+cpu[strAtt-1].name+"</td><td></td><td><b>cena: "+cpu[strAtt-1].price+" PLN</b></td>";
 		cart[2].price = cpu[strAtt - 1].price
 		cart[2].name = cpu[strAtt - 1].name
 	}
 	else if (SelectId == "mb"){
-		summaryMB.innerHTML = "<td><img src='img/"+mb[strAtt-1].img+"'></td><td>"+mb[strAtt-1].name+"</td><td><b>cena: "+mb[strAtt-1].price+" PLN</b></td>";
+		summaryMB.innerHTML = "<td><img src='img/"+mb[strAtt-1].img+"'></td><td>"+mb[strAtt-1].name+"</td><td>"+mb[strAtt-1].typ+"</td><td><b>cena: "+mb[strAtt-1].price+" PLN</b></td>";
 		cart[0].price = mb[strAtt - 1].price
 		cart[0].name = mb[strAtt - 1].name
 	}
 	else if (SelectId == "gpu"){
-		summaryGFX.innerHTML = "<td><img src='img/"+gpu[strAtt-1].img+"'></td><td>"+gpu[strAtt-1].name+"</td><td><b>cena: "+gpu[strAtt-1].price+" PLN</b></td>";
+		summaryGFX.innerHTML = "<td><img src='img/"+gpu[strAtt-1].img+"'></td><td>"+gpu[strAtt-1].name+"</td><td></td><td><b>cena: "+gpu[strAtt-1].price+" PLN</b></td>";
 		cart[1].price = gpu[strAtt - 1].price
 		cart[1].name = gpu[strAtt - 1].name
 	}
 	else if (SelectId == "ram"){
-		summaryRAM.innerHTML = "<td><img src='img/"+ram[strAtt-1].img+"'></td><td>"+ram[strAtt-1].name+"</td><td><b>cena: "+ram[strAtt-1].price+" PLN</b></td>";
+		summaryRAM.innerHTML = "<td><img src='img/"+ram[strAtt-1].img+"'></td><td>"+ram[strAtt-1].name+"</td><td></td><td><b>cena: "+ram[strAtt-1].price+" PLN</b></td>";
 		cart[3].price = ram[strAtt - 1].price
 		cart[3].name = ram[strAtt - 1].name
 	}
 	else if (SelectId == "power"){
-		summaryPOWER.innerHTML = "<td><img src='img/"+power[strAtt-1].img+"'></td><td>"+power[strAtt-1].name+"</td><td><b>cena: "+power[strAtt-1].price+" PLN</b></td>";
+		summaryPOWER.innerHTML = "<td><img src='img/"+power[strAtt-1].img+"'></td><td>"+power[strAtt-1].name+"</td><td>"+power[strAtt-1].typ+"</td><td><b>cena: "+power[strAtt-1].price+" PLN</b></td>";
 		cart[4].price = power[strAtt - 1].price
 		cart[4].name = power[strAtt - 1].name
 	}
 	else if (SelectId == "box"){
-		summaryBOX.innerHTML = "<td><img src='img/"+box[strAtt-1].img+"'></td><td>"+box[strAtt-1].name+"</td><td><b>cena: "+box[strAtt-1].price+" PLN</b></td>";
+		summaryBOX.innerHTML = "<td><img src='img/"+box[strAtt-1].img+"'></td><td>"+box[strAtt-1].name+"</td><td>"+box[strAtt-1].typ+"</td><td><b>cena: "+box[strAtt-1].price+" PLN</b></td>";
 		cart[5].price = box[strAtt - 1].price
 		cart[5].name = box[strAtt - 1].name
 	}
+	else if (SelectId == "ssd"){
+		summarySSD.innerHTML = "<td><img src='img/"+ssd[strAtt-1].img+"'></td><td>"+ssd[strAtt-1].name+"</td><td></td><td><b>cena: "+ssd[strAtt-1].price+" PLN</b></td>";
+		cart[6].price = ssd[strAtt - 1].price
+		cart[6].name = ssd[strAtt - 1].name
+	}
 	else
 	{}
-	document.getElementById("sumAll").innerHTML="<b>Suma koszyka:"+ (cart[0].price+cart[1].price+cart[2].price+cart[3].price+cart[4].price+cart[5].price)+" PLN</b>"
+	document.getElementById("sumAll").innerHTML="<b>Suma koszyka:"+ (cart[0].price+cart[1].price+cart[2].price+cart[3].price+cart[4].price+cart[5].price+cart[6].price)+" PLN</b>"
 }
 for(let i=0; i<mb.length; i++){
 	addOpt("mb", mb[i].id, mb[i].name,)
@@ -218,3 +250,6 @@ for(let i=0; i<power.length; i++){
 for(let i=0; i<box.length; i++){
 	addOpt("box", box[i].id, box[i].name)
 	}
+for(let i=0; i<ssd.length; i++){
+	addOpt("ssd", ssd[i].id, ssd[i].name)
+}
