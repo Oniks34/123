@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="PL">
+<head>
+	<link rel="stylesheet" href="css/style.css">
+<body>
+<main>
+	<section id="selectComp">
+		<table>
+			<tr>
+				<td>Płyta Główna</td>
+				<td>
+					<select name="mb" id="mb" onchange="SelectedItemValue('mb')">
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Karta Graficzna</td>
+				<td>
+					<select name="gpu" id="gpu" onchange="SelectedItemValue('gpu')">
+					</select>
+				</td>	
+			</tr>
+			<tr>
+				<td>Procesor</td>
+				<td>
+					<select name="cpu" id="cpu" onchange="SelectedItemValue('cpu')">
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Pamięć RAM</td>
+				<td>
+					<select name="ram" id="ram" onchange="SelectedItemValue('ram')">
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Zasilacz</td>
+				<td>
+					<select name="power" id="power" onchange="SelectedItemValue('power')">
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Obudowa</td>
+				<td>
+					<select name="box" id="box" onchange="SelectedItemValue('box')">
+					</select>
+				</td>
+			</tr>
+		</table>
+	</section>
+	<section id="sumcompline"></section>
+	<table id="summaryComp">
+		<tr id="summaryMB"></tr>
+		<tr id="summaryGFX"></tr>
+		<tr id="summaryCPU"></tr>
+		<tr id="summaryRAM"></tr>
+		<tr id="summaryPOWER"></tr>
+		<tr id="summaryBOX"></tr>
+	</table>
+	<section id="suma"></section>
+	<div id="summaryMainboard"></div>
+	<div id="sumAll"></div>
+</main>
+<script src="js/script.js"></script>
+</body>
+</head>
+</html>
+
+
