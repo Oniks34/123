@@ -44,84 +44,84 @@ const mb = [
 const cpu = [
 	{
 			id:1,
-			name: "Procesor Intel Core i7-10700K, 3.8GHz, 16 MB",
+			name: "Intel Core i7-10700K, 3.8GHz, 16 MB",
 			price: 1749,
-			img:"",
+			img:"Intel_1.jpg",
 	},
 	{
 			id:2,
-			name: "Procesor Intel Core i5-10400F, 2.9GHz, 12 MB",
+			name: "Intel Core i5-10400F, 2.9GHz, 12 MB",
 			price: 699,
-			img:"",
+			img:"i-5.jpg",
 	},
 	{
 			id:3,
-			name: "Procesor Intel Core i9-10850K, 3.6GHz, 20 MB",
+			name: "Intel Core i9-10850K, 3.6GHz, 20 MB",
 			price: 2189,
-			img:"",
+			img:"I-9.jpg",
 	},
 ]
 const ram = [
 	{
 			id:1,
-			name: "Pamięć HyperX Predator RGB, DDR4, 16 GB, 4000MHz, CL19",
+			name: "HyperX Predator RGB, DDR4, 16 GB, 4000MHz, CL19",
 			price: 671,
-			img:"",
+			img:"HYP-P.jpeg",
 	},
 	{
 			id:2,
-			name: "Pamięć G.Skill TridentX, DDR3, 16 GB, 2400MHz, CL10",
+			name: "G.Skill TridentX, DDR3, 16 GB, 2400MHz, CL10",
 			price: 539,
-			img:"",
+			img:"g-skill.jpg",
 	},
 	{
 			id:3,
-			name: "Pamięć G.Skill Flare X, DDR4, 16 GB, 3200MHz, CL14",
+			name: "G.Skill Flare X, DDR4, 16 GB, 3200MHz, CL14",
 			price: 469,
-			img:"",
+			img:"g-skill-2.jpg",
 	},
 ]
 const power = [
 	{
 			id:1,
-			name: "Zasilacz be quiet! Straight Power 11 750W",
+			name: "be quiet! Straight Power 11 750W",
 			price: 578,
-			img:"",
+			img:"BE_QUIET_STRAIGHT_POWER_11_09.jpg",
 	},
 	{
 			id:2,
-			name: "Zasilacz Corsair RM750x 750W",
+			name: "Corsair RM750x 750W",
 			price: 619,
-			img:"",
+			img:"zasilacz-corsair-rm750x.jpg",
 	},
 	{
 			id:3,
-			name: "Zasilacz Corsair RM1000i 1000W Gold Series",
+			name: "Corsair RM1000i 1000W Gold Series",
 			price: 900,
-			img:"",
+			img:"morele-neeeeet.jpg",
 	},
 ]
 const box = [
 	{
 			id:1,
-			name: "Obudowa SilentiumPC Signum SG7V TG",
+			name: "SilentiumPC Signum SG7V TG",
 			price: 329,
 			typ: "ATX / Thin Mini-ITX / Micro ATX (uATX)",
-			img:"",
+			img:"spc-1.jpg",
 	},
 	{
 			id:2,
-			name: "Obudowa Genesis Irid 400 ARGB",
+			name: "Genesis Irid 400 ARGB",
 			price: 359,
 			typ: "Mini ITX / ATX / Micro ATX (uATX)",
-			img:"",
+			img:"genesisirid400rgb-640x360.jpg",
 	},
 	{
 			id:3,
-			name: "Obudowa MSI MAG Forge 100M",
+			name: "MSI MAG Forge 100M",
 			price: 209,
 			typ: "Mini ITX / ATX / Micro ATX (uATX)",
-			img:"",
+			img:"msi-mag-forge-100m-4.jpg",
 	},
 ]
 var cart = [
@@ -167,38 +167,38 @@ function SelectedItemValue(SelectId){
 	const summaryMB = document.getElementById("summaryMB");
 	const summaryGFX = document.getElementById("summaryGFX");
 	if (SelectId == "cpu"){
-		summaryCPU.innerHTML = "<td><img src='img/"+cpu[strAtt-1].img+"'></td><td>"+cpu[strAtt-1].name+"</td><td><b>cena: "+cpu[strAtt-1].price+" zł</b></td>";
+		summaryCPU.innerHTML = "<td><img src='img/"+cpu[strAtt-1].img+"'></td><td>"+cpu[strAtt-1].name+"</td><td><b>cena: "+cpu[strAtt-1].price+" PLN</b></td>";
 		cart[2].price = cpu[strAtt - 1].price
 		cart[2].name = cpu[strAtt - 1].name
 	}
 	else if (SelectId == "mb"){
-		summaryMB.innerHTML = "<td><img src='img/"+mb[strAtt-1].img+"'></td><td>"+mb[strAtt-1].name+"</td><td><b>cena: "+mb[strAtt-1].price+" zł</b></td>";
+		summaryMB.innerHTML = "<td><img src='img/"+mb[strAtt-1].img+"'></td><td>"+mb[strAtt-1].name+"</td><td><b>cena: "+mb[strAtt-1].price+" PLN</b></td>";
 		cart[0].price = mb[strAtt - 1].price
 		cart[0].name = mb[strAtt - 1].name
 	}
 	else if (SelectId == "gpu"){
-		summaryGFX.innerHTML = "<td><img src='img/"+gpu[strAtt-1].img+"'></td><td>"+gpu[strAtt-1].name+"</td><td><b>cena: "+gpu[strAtt-1].price+" zł</b></td>";
+		summaryGFX.innerHTML = "<td><img src='img/"+gpu[strAtt-1].img+"'></td><td>"+gpu[strAtt-1].name+"</td><td><b>cena: "+gpu[strAtt-1].price+" PLN</b></td>";
 		cart[1].price = gpu[strAtt - 1].price
 		cart[1].name = gpu[strAtt - 1].name
 	}
 	else if (SelectId == "ram"){
-		summaryRAM.innerHTML = "<td><img src='img/"+ram[strAtt-1].img+"'></td><td>"+ram[strAtt-1].name+"</td><td><b>cena: "+ram[strAtt-1].price+" zł</b></td>";
+		summaryRAM.innerHTML = "<td><img src='img/"+ram[strAtt-1].img+"'></td><td>"+ram[strAtt-1].name+"</td><td><b>cena: "+ram[strAtt-1].price+" PLN</b></td>";
 		cart[3].price = ram[strAtt - 1].price
 		cart[3].name = ram[strAtt - 1].name
 	}
 	else if (SelectId == "power"){
-		summaryPOWER.innerHTML = "<td><img src='img/"+power[strAtt-1].img+"'></td><td>"+power[strAtt-1].name+"</td><td><b>cena: "+power[strAtt-1].price+" zł</b></td>";
+		summaryPOWER.innerHTML = "<td><img src='img/"+power[strAtt-1].img+"'></td><td>"+power[strAtt-1].name+"</td><td><b>cena: "+power[strAtt-1].price+" PLN</b></td>";
 		cart[4].price = power[strAtt - 1].price
 		cart[4].name = power[strAtt - 1].name
 	}
 	else if (SelectId == "box"){
-		summaryBOX.innerHTML = "<td><img src='img/"+box[strAtt-1].img+"'></td><td>"+box[strAtt-1].name+"</td><td><b>cena: "+box[strAtt-1].price+" zł</b></td>";
+		summaryBOX.innerHTML = "<td><img src='img/"+box[strAtt-1].img+"'></td><td>"+box[strAtt-1].name+"</td><td><b>cena: "+box[strAtt-1].price+" PLN</b></td>";
 		cart[5].price = box[strAtt - 1].price
 		cart[5].name = box[strAtt - 1].name
 	}
 	else
 	{}
-	document.getElementById("sumAll").innerHTML="<b>Suma koszyka:"+ (cart[0].price+cart[1].price+cart[2].price+cart[3].price+cart[4].price+cart[5].price)+" zł</b>"
+	document.getElementById("sumAll").innerHTML="<b>Suma koszyka:"+ (cart[0].price+cart[1].price+cart[2].price+cart[3].price+cart[4].price+cart[5].price)+" PLN</b>"
 }
 for(let i=0; i<mb.length; i++){
 	addOpt("mb", mb[i].id, mb[i].name,)
