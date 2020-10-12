@@ -25,12 +25,3 @@ table#summaryComp td {
 	width: 150px;
 	height: auto;
 }
-#header{
-	background: rgb(110,0,0);
-	background: linear-gradient(90deg, rgba(110,0,0,1) 7%, rgba(13,0,129,1) 92%);
-	height: 30px;
-}
-#header div{
-	text-align: center;
-	color: gold;
-}

@@ -147,6 +147,86 @@ const box = [
 			img:"msi-mag-forge-100m-4.jpg",
 	},
 ]
+const monitor = [
+	{
+		id:1,
+		name: "Samsung C49RG90",
+		price: 5499,
+		img:"Samsung-C49RG90.jpg",
+	},
+	{
+		id:2,
+		name: "AOC C24G1",
+		price: 849,
+		img:"AOC-C24G1.jpg",
+	},
+	{
+		id:3,
+		name: "Acer ED242QRAbidpx",
+		price: 668,
+		img:"Monitor-Acer-ED242QRAbidpx.jpg",
+	},
+]
+const headphones = [
+	{
+		id:1,
+		name: "Tracer 7.1 Hydra",
+		price: 100,
+		img:"Hydra.jpeg",
+	},
+	{
+		id:2,
+		name: "Hiro Psi",
+		price: 120,
+		img:"PSI.jpg",
+	},
+	{
+		id:3,
+		name: "AKG K712",
+		price: 1074,
+		img:"AKG-K712.jpeg",
+	},
+]
+const hdd = [
+	{
+		id:1,
+		name: "Toshiba 4 TB 3.5 SATA III X300",
+		price: 599,
+		img:"Toshiba.jpeg",
+	},
+	{
+		id:2,
+		name: "Seagate Barracuda Pro 1 TB 2.5 SATA III",
+		price: 294,
+		img:"Seagate.jpg",
+	},
+	{
+		id:3,
+		name: "Western Digital He12 12 TB 3.5 SATA III",
+		price: 2370,
+		img:"Western.jpg",
+	},
+]
+const ups = [
+	{
+		id:1,
+		name: "CyberPower UT1050EG-FR",
+		price: 419,
+		img:"ups1.jpg",
+	},
+	{
+		id:2,
+		name: "PowerWalker VI 800 SW FR",
+		price: 418,
+		img:"ups-2.jpg",
+	},
+	{
+		id:3,
+		name: "APC Smart SRT",
+		price: 27456,
+		img:"ups-3.jpg",
+	},
+]
 var cart = [
 	{
 		name: 'mainboard',
@@ -174,6 +254,22 @@ var cart = [
 	},
 	{
 		name: 'ssd',
+		price:0
+	},
+	{
+		name: 'monitor',
+		price:0
+	},
+	{
+		name: 'headphones',
+		price:0
+	},
+	{
+		name: 'hdd',
+		price:0
+	},
+	{
+		name: 'ups',
 		price:0
 	},
 ]
@@ -228,9 +324,29 @@ function SelectedItemValue(SelectId){
 		cart[6].price = ssd[strAtt - 1].price
 		cart[6].name = ssd[strAtt - 1].name
 	}
+	else if (SelectId == "monitor"){
+		summaryMonitor.innerHTML = "<td><img src='img/"+monitor[strAtt-1].img+"'></td><td>"+monitor[strAtt-1].name+"</td><td></td><td><b>cena: "+monitor[strAtt-1].price+" PLN</b></td>";
+		cart[7].price = monitor[strAtt - 1].price
+		cart[7].name = monitor[strAtt - 1].name
+	}
+	else if (SelectId == "headphones"){
+		summaryHeadphones.innerHTML = "<td><img src='img/"+headphones[strAtt-1].img+"'></td><td>"+headphones[strAtt-1].name+"</td><td></td><td><b>cena: "+headphones[strAtt-1].price+" PLN</b></td>";
+		cart[8].price = headphones[strAtt - 1].price
+		cart[8].name = headphones[strAtt - 1].name
+	}
+	else if (SelectId == "hdd"){
+		summaryHDD.innerHTML = "<td><img src='img/"+hdd[strAtt-1].img+"'></td><td>"+hdd[strAtt-1].name+"</td><td></td><td><b>cena: "+hdd[strAtt-1].price+" PLN</b></td>";
+		cart[9].price = hdd[strAtt - 1].price
+		cart[9].name = hdd[strAtt - 1].name
+	}
+	else if (SelectId == "ups"){
+		summaryUPS.innerHTML = "<td><img src='img/"+ups[strAtt-1].img+"'></td><td>"+ups[strAtt-1].name+"</td><td></td><td><b>cena: "+ups[strAtt-1].price+" PLN</b></td>";
+		cart[9].price = ups[strAtt - 1].price
+		cart[9].name = ups[strAtt - 1].name
+	}
 	else
 	{}
-	document.getElementById("sumAll").innerHTML="<b>Suma koszyka:"+ (cart[0].price+cart[1].price+cart[2].price+cart[3].price+cart[4].price+cart[5].price+cart[6].price)+" PLN</b>"
+	document.getElementById("sumAll").innerHTML="<b>Suma koszyka:"+ (cart[0].price+cart[1].price+cart[2].price+cart[3].price+cart[4].price+cart[5].price+cart[6].price+cart[7].price+cart[8].price+cart[9].price+cart[10].price)+" PLN</b>"
 }
 for(let i=0; i<mb.length; i++){
 	addOpt("mb", mb[i].id, mb[i].name,)
@@ -252,4 +368,16 @@ for(let i=0; i<box.length; i++){
 	}
 for(let i=0; i<ssd.length; i++){
 	addOpt("ssd", ssd[i].id, ssd[i].name)
+}
+for(let i=0; i<monitor.length; i++){
+	addOpt("monitor", monitor[i].id, monitor[i].name)
+}
+for(let i=0; i<headphones.length; i++){
+	addOpt("headphones", headphones[i].id, headphones[i].name)
+}
+for(let i=0; i<hdd.length; i++){
+	addOpt("hdd", hdd[i].id, hdd[i].name)
+}
+for(let i=0; i<ups.length; i++){
+	addOpt("ups", ups[i].id, ups[i].name)
 }
