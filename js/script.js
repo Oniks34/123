@@ -381,3 +381,4 @@ for(let i=0; i<hdd.length; i++){
 for(let i=0; i<ups.length; i++){
 	addOpt("ups", ups[i].id, ups[i].name)
 }
+
